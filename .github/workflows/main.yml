@@ -1,6 +1,7 @@
 name: CI/CD main_yml
 
 on:
+  push:
   workflow_dispatch:
 
 jobs:
@@ -9,10 +10,16 @@ jobs:
 
     steps:
     - name: Chenckout code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: Install dependencies
       run: sudo apt update && sudo apt install -y cmake g++ 
 
+    - name: List files for debug
+      run: ls -la
+
     - name: Configure
+      run: cmake .
+
+    - name: Build
       run: cmake --build .
