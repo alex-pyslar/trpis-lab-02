@@ -1,0 +1,18 @@
+name: CI/CD main_yml
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Chenckout code
+      uses: actions/checkout@v3
+
+    - name: Install dependencies
+      run: sudo pat update && sudo apt install -y cmake g++ 
+
+    - name: Configure
+      run: cmake --build .
