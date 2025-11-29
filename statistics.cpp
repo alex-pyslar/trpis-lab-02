@@ -11,19 +11,6 @@ using namespace std;
   @brief Реализация функций класса Statistics.
 */
 
-// функция вычисления суммы вектора
-double Statistics::sum(vector<double>& data) 
-{
-    double sum = 0;
-
-    for(int i = 0; i < data.size();i++)
-    {
-        sum = sum + data[i];
-    }
-
-    return sum;
-}
-
 // функция вычисления минимального значения вектора
 double Statistics::min(vector<double>& data)
 {
