@@ -11,6 +11,7 @@ int main()
     cout << "Min: " << Statistics::min(numbers) << endl;
     cout << "Max: " << Statistics::max(numbers) << endl;
     cout << "Average: " << Statistics::average(numbers) << endl;
+    cout << "Median: " << Statistics::median(numbers) << endl;
 
     return 0;
 }
