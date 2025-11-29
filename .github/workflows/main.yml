@@ -9,20 +9,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Chenckout code
+    - name: Checkout code
       uses: actions/checkout@v4
 
     - name: Install dependencies
-      run: sudo apt update && sudo apt install -y cmake g++ 
+      run: sudo apt update && sudo apt install -y cmake g++
 
     - name: List files for debug
       run: ls -la
 
-    - name: Add build folder
-      run: mkdir build && cd build
 
     - name: Configure
-      run: cmake ..
+      run: cmake .
 
     - name: Build
-      run: make
+      run: cmake --build .
+
+    - name: Test code
+      run: ctest --output-on-failure
