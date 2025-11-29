@@ -18,8 +18,11 @@ jobs:
     - name: List files for debug
       run: ls -la
 
+    - name: Add build folder
+      run: mkdir build && cd build
+
     - name: Configure
-      run: cmake .
+      run: cmake ..
 
     - name: Build
-      run: cmake --build .
+      run: make
